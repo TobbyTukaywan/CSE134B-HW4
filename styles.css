@@ -11,6 +11,7 @@
     --music-fill: #0c9ef2;
     --nav-border-width: 0.2rem;
     --nav-item-padding: 0.35em 0.8em;
+    --error-color: red;
 }
 
 @font-face {
@@ -47,7 +48,8 @@ button:hover {
 a:focus,
 button:focus,
 input:focus,
-textarea:focus {
+textarea:focus,
+iframe:focus {
     outline: 0.15rem solid var(--font-color);
     outline-offset: 0.15rem;
 }
@@ -104,6 +106,8 @@ iframe {
 
 label[for="nitrorad-video"] {
     text-align: center;
+    display: block;
+    margin-top: 0.75em;
 }
 
 button {
@@ -113,11 +117,6 @@ button {
     color: var(--button-border);
     font-family: inherit;
     font-size: inherit;
-}
-
-label {
-    display: block;
-    margin-top: 0.75em;
 }
 
 input,
@@ -353,17 +352,41 @@ dialog {
     padding: var(--frame-padding);
     font-family: inherit;
     color: inherit;
+}
 
-    fieldset {
-        border: none;
-        margin: 0;
-        padding: 0;
-    }
-
+form {
     hr {
         border: none;
         border-top: 1px solid var(--button-border);
     }
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding-top: var(--frame-padding);
+}
+
+legend {
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: var(--nav-item-padding);
+    border: var(--nav-border-width) solid var(--frame-border);
+}
+input:user-invalid, textarea:user-invalid {
+    box-shadow: 0 0 2rem var(--error-color);
+    border-color: var(--error-color);
+}
+
+form-detail {
+    font-size: 0.75em;
+    font-style: italic;
 }
 
 dialog::backdrop {

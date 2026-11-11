@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form | Yorbelnet</title>
+    <link rel="icon" type="image/svg+xml" href="assets/Yorbel.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <form action="https://httpbin.org/post" method="post">
+            <fieldset>
+                <legend>Submit Comments</legend>
+                <label for="name">*Name:</label>
+                <form-detail>(1-100 characters)</form-detail>
+                <input type="text" name="name" id="name" placeholder="Enter your name" autocomplete="name" required minlength="1" maxlength="100">
+                <label for="email">*Email:</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email" autocomplete="email" required >
+                <label for="comments">*Comments:</label>
+                <form-detail>(10-1000 characters)</form-detail>
+                <textarea name="comments" id="comments" placeholder="Write comments here... (10-1000 characters)" rows="4" required minlength="10" maxlength="1000"></textarea>
+                <input type="hidden" name="possible_bot" value="true">
+                <form-detail>Fields marked with "*" are required</form-detail>
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>
