@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History & Legacy | Yorbelnet</title>
+    <link rel="icon" type="image/svg+xml" href="assets/Yorbel.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <site-logo>
+            <a href="index.html" title="Go to homepage" aria-label="Go to homepage">
+                <svg width="50" height="50" viewBox="0 0 124 124" fill="none" aria-hidden="true">
+                    <circle cx="62" cy="62" r="60" fill="#cd52b5"/>
+                    <polygon points="0,62 15.8,104.2 114,100" fill="#25f7ff"/>
+                    <polygon points="1.5,49 55,61 113,27 102,16 45.2,53" fill="#25f7ff"/>
+                    <polygon points="5.9,38.4 22,39.7 35,37.2 42.4,24.5 32.8,14 24,22.9 32.8,24.2 28.8,22.0 32.5,18.6 36.9,25.4 28.2,30.1 9.9,29.4" fill="#25f7ff"/>
+                </svg>
+            </a>
+        </site-logo>
+        <nav>
+            <ul>
+                <li><nav-item><a href="index.html" title="Go to homepage">Home</a></nav-item></li>
+                <li>
+                    <nav-item><a href="games.html" title="Learn about the games">Games</a></nav-item>
+                    <nav-dropdown>
+                        <nav-sub-item><a href="tak1.html" title="Learn about the first game">Tak and the Power of Juju</a></nav-sub-item>
+                        <nav-sub-item><a href="tak2.html" title="Learn about the second game">Tak 2: The Staff of Dreams</a></nav-sub-item>
+                        <nav-sub-item><a href="tak3.html" title="Learn about the third game">Tak: The Great Juju Challenge</a></nav-sub-item>
+                    </nav-dropdown>
+                </li>
+                <li><nav-item><a href="history.html" title="Learn about the history and legacy of the series" class="active">History & Legacy</a></nav-item></li>
+                <li><nav-item><a href="about.html" title="Learn about the website">About</a></nav-item></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <noscript>
+            <p>Javascript is disabled in your browser. Some features may not work as expected.</p>
+        </noscript>
+        <h1>History & Legacy</h1>
+        <section>
+            <h2>History</h2>
+            <h3>Tak and the Power of Juju</h3>
+            <p>
+                Tak and the Power of Juju was originally concepted and pitched by Avalanch Software to THQ and
+                Nickelodeon in 1998, eventually being completed and releasing in October 15, 2003. It released to
+                moderate success, selling over a million units, and made history as Nickelodeon's first video game
+                not based off of an existing property.
+            </p>
+            <h3>Tak 2: The Staff of Dreams</h3>
+            <p>
+                Released less than a year later, on October 11, 2004, Tak 2: The Staff of Dreams was met with greater
+                critical success than the first, receiving better reviews, but less commercial success, selling
+                not quite a million units. However, it did have a collaboration with Burger King.
+            </p>
+            <h3>Tak: The Great Juju Challenge</h3>
+            <p>
+                Tak: The Great Juju Challenge had a challenged development. Partway through development, Avalanch
+                Software was bought by Disney. However, they decided to let Avalanch complete work on Tak 3
+                before ending their relationship with Nickelodeon for good. The game reuses many assets from
+                previous games, likely due to time constraints, but still ended up as a complete game that received
+                favorable reviews at the time.
+            </p>
+        </section>
+        <section>
+            <h2>Legacy</h2>
+            <h3>After the Trilogy</h3>
+            <p>
+                A couple years after the release of the final game in the trilogy, on August 31, 2007, Nickelodeon
+                released the first episode of the Tak and the Power of Juju animated TV series, making history as
+                their first 3D animated series produced fully in-house. It did not have much critical acclaim and
+                deviated heavily from the source material. The show spawned two spinoff games, Tak and the Guardians
+                of Gross and Tak: Mojo Mistake, then ended on January 24, 2009.
+            </p>
+            <h3>The Fan Community</h3>
+            <p>
+                Over 20 years later, there is still a small but dedicated fanbase for these old games. The fans
+                are mostly spread over small communities, but some relatively big-name YouTubers have covered
+                Tak as well, bringing new attention to this old franchise.
+            </p>
+            <label for="nitrorad-video">Check out this cool video:</label>
+            <iframe id="nitrorad-video" src="https://www.youtube.com/embed/SZZG45G8VqQ" width="560" height="315" title="YouTube video" allowfullscreen></iframe>
+            <h3>The Future of Tak</h3>
+            <p>
+                On March 21, 2018, THQNordic announced their plan to bring back many old THQ titles to newer
+                systems, either as remakes/remasters or even with brand new games. On that list of old games
+                was Tak and the Power of Juju. However, it has been over 8 years since then with no mention of a
+                new Tak game, so the future of the series remains uncertain.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <button commandfor="contact-me" command="show-modal">Contact me</button>
+        <p><i>Yorbelnet is an unofficial fan website and is not affiliated with or endorsed by Nickelodeon, THQ Nordic, or any other rights holders. Tak and related characters, names, and imagery belong to their respective owners.</i></p>
+    </footer>
+
+    <dialog id="contact-me">
+        <form action="#" method="post">
+            <fieldset>
+                <legend><b>Contact Information</b></legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </fieldset>
+            <hr>
+            <fieldset>
+                <legend><b>Your question</b></legend>
+                <label for="question">Question:</label>
+                <textarea id="question" name="question" rows="4" placeholder="Write your question here..." required></textarea>
+            </fieldset>
+            <button type="submit">Submit</button>
+            <button type="button" commandfor="contact-me" command="close">Close</button>
+        </form>
+    </dialog>
+</body>
+</html>

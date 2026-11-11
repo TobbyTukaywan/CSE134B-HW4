@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiments</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <template id="game-card-template">
+            <a href="Game Page URL" title="Learn about Game Name">
+                <article>
+                    <h2>Game Name</h2>
+                    <img src="Game Cover Image Path" alt="Game Name Cover Art">
+                    <release-date>
+                        Released: <time datetime="Release Date">Release Date</time>
+                    </release-date>
+                    <p>Game Description</p>
+                </article>
+            </a>
+        </template>
+
+        <audio controls>
+            <source src="assets/grem_growl.wav">
+            <source src="assets/memory-4.mp3">
+            Audio could not play
+        </audio>
+        
+        <video src="assets/BleedOutDemo.mp4" width="560" height="315" controls>Video could not play</video>
+
+        <canvas id="my-canvas" width="124" height="124">Canvas could not display</canvas>
+
+        <script>
+            const canvas = document.getElementById("my-canvas");
+            const ctx = canvas.getContext("2d");
+
+            ctx.fillStyle = "#cd52b5";
+            ctx.beginPath();
+            ctx.arc(62, 62, 60, 0, 2 * Math.PI);
+            ctx.fill();
+
+            ctx.fillStyle = "#25f7ff";
+            ctx.fillRect(8, 78, 78, 14);
+            ctx.fillRect(44, 42, 80, 12);
+            ctx.fillRect(12, 24, 28, 10);
+        </script>
+
+        <math>
+            <mi>E</mi>
+            <mo>=</mo>
+            <mi>m</mi>
+            <msup>
+                <mi>c</mi>
+                <mn>2</mn>
+            </msup>
+        </math>
+
+        <p>
+            Many developers couldn't make use of MathML for a long time because many browsers didn't support it or supported it inconsistently.
+            According to caniuse.com, it was only recently in 2023 that the majority of browsers started supporting it.
+        </p>
+    </main>
+</body>
+</html>
