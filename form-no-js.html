@@ -8,6 +8,36 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <site-logo>
+            <a href="index.html" title="Go to homepage" aria-label="Go to homepage">
+                <svg width="50" height="50" viewBox="0 0 124 124" fill="none" aria-hidden="true">
+                    <circle cx="62" cy="62" r="60" fill="#cd52b5"/>
+                    <polygon points="0,62 15.8,104.2 114,100" fill="#25f7ff"/>
+                    <polygon points="1.5,49 55,61 113,27 102,16 45.2,53" fill="#25f7ff"/>
+                    <polygon points="5.9,38.4 22,39.7 35,37.2 42.4,24.5 32.8,14 24,22.9 32.8,24.2 28.8,22.0 32.5,18.6 36.9,25.4 28.2,30.1 9.9,29.4" fill="#25f7ff"/>
+                </svg>
+            </a>
+        </site-logo>
+        <nav>
+            <ul>
+                <li><nav-item><a href="index.html" title="Go to homepage">Home</a></nav-item></li>
+                <li>
+                    <nav-item><a href="games.html" title="Learn about the games">Games</a></nav-item>
+                    <nav-dropdown>
+                        <nav-sub-item><a href="tak1.html" title="Learn about the first game">Tak and the Power of Juju</a></nav-sub-item>
+                        <nav-sub-item><a href="tak2.html" title="Learn about the second game">Tak 2: The Staff of Dreams</a></nav-sub-item>
+                        <nav-sub-item><a href="tak3.html" title="Learn about the third game" class="active">Tak: The Great Juju Challenge</a></nav-sub-item>
+                    </nav-dropdown>
+                </li>
+                <li><nav-item><a href="history.html" title="Learn about the history and legacy of the series">History & Legacy</a></nav-item></li>
+                <li><nav-item><a href="about.html" title="Learn about the website">About</a></nav-item></li>
+                <li><nav-item><a href="form-no-js.html" title="Submit comments">Form</a></nav-item></li>
+                <li><nav-item><a href="form-with-js.html" title="Submit comments with JavaScript">Form+</a></nav-item></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
         <form action="https://httpbin.org/post" method="post">
             <fieldset>
@@ -26,5 +56,30 @@
             </fieldset>
         </form>
     </main>
+
+    <footer>
+        <button commandfor="contact-me" command="show-modal">Contact me</button>
+        <p><i>Yorbelnet is an unofficial fan website and is not affiliated with or endorsed by Nickelodeon, THQ Nordic, or any other rights holders. Tak and related characters, names, and imagery belong to their respective owners.</i></p>
+    </footer>
+
+    <dialog id="contact-me">
+        <form action="#" method="post">
+            <fieldset>
+                <legend><b>Contact Information</b></legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </fieldset>
+            <hr>
+            <fieldset>
+                <legend><b>Your question</b></legend>
+                <label for="question">Question:</label>
+                <textarea id="question" name="question" rows="4" placeholder="Write your question here..." required></textarea>
+            </fieldset>
+            <button type="submit">Submit</button>
+            <button type="button" commandfor="contact-me" command="close">Close</button>
+        </form>
+    </dialog>
 </body>
 </html>
