@@ -5,7 +5,7 @@ let theme = 'light';
 let rotation;
 
 try {
-    theme = localStorage.getItem('theme');
+    theme = localStorage.getItem('theme') || theme;
 } catch (e) {
     console.error('Error reading theme from localStorage:', e);
 }

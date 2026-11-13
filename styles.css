@@ -155,6 +155,7 @@ header {
     align-items: center;
     gap: var(--frame-padding);
     margin: 2rem var(--frame-margin) 0;
+    view-transition-name: page-header;
 }
 
 site-logo {
@@ -248,6 +249,8 @@ main {
     padding: var(--frame-padding);
     border: var(--frame-border-width) solid var(--frame-border);
     background-color: var(--frame-fill);
+
+    view-transition-name: main-content;
 }
 
 #home-links {
@@ -294,6 +297,8 @@ footer {
     }
 
     overflow: clip;
+
+    view-transition-name: page-footer;
 }
 
 game-card {
@@ -380,6 +385,20 @@ dialog {
     padding: var(--frame-padding);
     font-family: var(--font-stack);
     color: var(--font-color);
+
+    scale: 0;
+    transition: scale 0.3s, display 0.3s, overlay 0.3s;
+    transition-behavior: allow-discrete;
+    transition-timing-function: ease-in;
+}
+dialog:open {
+    scale: 1;
+    transition-timing-function: ease-out;
+}
+@starting-style {
+    dialog:open {
+        scale: 0;
+    }
 }
 
 form {
@@ -524,8 +543,55 @@ theme-toggle:has(#theme-button:hover) img {
     }
 }
 
+
+
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-group(page-header),
+::view-transition-group(page-footer) {
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+}
+
+::view-transition-old(main-content) {
+    animation: 0.3s ease-in both shrink-out;
+}
+::view-transition-new(main-content) {
+    animation: 0.3s ease-out 0.3s both grow-in;
+}
+
+@keyframes shrink-out {
+    to {
+        scale: 0;
+    }
+}
+
+@keyframes grow-in {
+    from {
+        scale: 0;
+    }
+}
+
+:root:active-view-transition nav-dropdown {
+    display: none;
+}
+
+
 @media (prefers-reduced-motion: reduce) {
     #theme-staff {
+        transition: none;
+    }
+    ::view-transition-old(main-content),
+    ::view-transition-new(main-content),
+    ::view-transition-old(page-header),
+    ::view-transition-new(page-header),
+    ::view-transition-old(page-footer),
+    ::view-transition-new(page-footer) {
+        animation: none;
+    }
+    dialog {
         transition: none;
     }
 }
