@@ -58,8 +58,14 @@
     </main>
 
     <footer>
-        <button commandfor="contact-me" command="show-modal">Contact me</button>
         <p><i>Yorbelnet is an unofficial fan website and is not affiliated with or endorsed by Nickelodeon, THQ Nordic, or any other rights holders. Tak and related characters, names, and imagery belong to their respective owners.</i></p>
+        <div id="footer-buttons">
+            <theme-toggle hidden>
+                <button id="theme-button" type="button">Switch to dark mode</button>
+                <img id="theme-staff" src="assets/Staff_of_Dreams.webp" alt="">
+            </theme-toggle>
+            <button commandfor="contact-me" command="show-modal">Contact me</button>
+        </div>
     </footer>
 
     <dialog id="contact-me">

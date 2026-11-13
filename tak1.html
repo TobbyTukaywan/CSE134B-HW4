@@ -6,6 +6,7 @@
     <title>Tak and the Power of Juju | Yorbelnet</title>
     <link rel="icon" type="image/svg+xml" href="assets/Yorbel.svg">
     <link rel="stylesheet" href="styles.css">
+    <script src="theme.js" defer></script>
 </head>
 <body>
     <header>
@@ -74,7 +75,7 @@
                 wonderful mind of Todd Harris, integrating lots of natural scenery with tribal imagery, drawing
                 inspiration from many cultural backgrounds.
             </p>
-            <img src="assets/Village_art.webp" alt="Concept art of Tak's village" width="400">
+            <img src="assets/ChickenIslandConcept.png" alt="Concept art of Tak's village" width="400">
             <p>
                 This game's cast features some top-tier voice talent. Including cartoon voice acting giants such
                 as Jason Marsden as Tak, Patrick Warburton as Lok, and Rob Paulsen as Tlaloc and Dead Juju.
@@ -107,8 +108,14 @@
     </main>
 
     <footer>
-        <button commandfor="contact-me" command="show-modal">Contact me</button>
         <p><i>Yorbelnet is an unofficial fan website and is not affiliated with or endorsed by Nickelodeon, THQ Nordic, or any other rights holders. Tak and related characters, names, and imagery belong to their respective owners.</i></p>
+        <div id="footer-buttons">
+            <theme-toggle hidden>
+                <button id="theme-button" type="button">Switch to dark mode</button>
+                <img id="theme-staff" src="assets/Staff_of_Dreams.webp" alt="">
+            </theme-toggle>
+            <button commandfor="contact-me" command="show-modal">Contact me</button>
+        </div>
     </footer>
 
     <dialog id="contact-me">

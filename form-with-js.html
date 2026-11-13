@@ -6,6 +6,7 @@
     <title>Form+ | Yorbelnet</title>
     <link rel="icon" type="image/svg+xml" href="assets/Yorbel.svg">
     <link rel="stylesheet" href="styles.css">
+    <script src="theme.js" defer></script>
     <script src="form.js" defer></script>
 </head>
 <body>
@@ -44,25 +45,32 @@
             <fieldset>
                 <legend>Submit Comments</legend>
                 <label for="name">*Name:</label>
-                <form-detail>(1-100 characters)</form-detail>
-                <input type="text" name="name" id="name" placeholder="Enter your name" autocomplete="name" required minlength="1" maxlength="100">
+                <form-detail id="name-limit">(1-100 characters)</form-detail>
+                <input type="text" name="name" id="name" placeholder="Enter your name" autocomplete="name" required minlength="1" maxlength="100" aria-describedby="name-limit">
                 <label for="email">*Email:</label>
                 <input type="email" name="email" id="email" placeholder="Enter your email" autocomplete="email" required >
                 <label for="comments">*Comments:</label>
-                <form-detail>(10-1000 characters)</form-detail>
-                <textarea name="comments" id="comments" placeholder="Write comments here... (10-1000 characters)" rows="4" required minlength="10" maxlength="1000"></textarea>
+                <form-detail id="comments-limit">(10-1000 characters)</form-detail>
+                <textarea name="comments" id="comments" placeholder="Write comments here... (10-1000 characters)" rows="4" required minlength="10" maxlength="1000" aria-describedby="comments-limit"></textarea>
                 <char-count></char-count>
                 <input type="hidden" name="possible_bot" value="true">
+                <input type="hidden" name="form-errors" id="form-errors">
                 <form-detail>Fields marked with "*" are required</form-detail>
-                <error-message></error-message>
+                <error-message aria-live="polite"></error-message>
                 <button type="submit">Submit</button>
             </fieldset>
         </form>
     </main>
 
     <footer>
-        <button commandfor="contact-me" command="show-modal">Contact me</button>
         <p><i>Yorbelnet is an unofficial fan website and is not affiliated with or endorsed by Nickelodeon, THQ Nordic, or any other rights holders. Tak and related characters, names, and imagery belong to their respective owners.</i></p>
+        <div id="footer-buttons">
+            <theme-toggle hidden>
+                <button id="theme-button" type="button">Switch to dark mode</button>
+                <img id="theme-staff" src="assets/Staff_of_Dreams.webp" alt="">
+            </theme-toggle>
+            <button commandfor="contact-me" command="show-modal">Contact me</button>
+        </div>
     </footer>
 
     <dialog id="contact-me">
